@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -52,26 +52,23 @@
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x8z-E3-kOL">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="28" width="360" height="468"/>
-                                </variation>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hello World" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fN5-Mc-5Nc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fN5-Mc-5Nc">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <color key="backgroundColor" red="0.25273243359999997" green="0.84368631110000003" blue="0.23226412330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="28" width="360" height="30"/>
+                                    <rect key="frame" x="0.0" y="20" width="400" height="30"/>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vs5-aA-Fph">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vs5-aA-Fph">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <color key="backgroundColor" red="0.84368631110000003" green="0.2410948343" blue="0.22601813000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="466" width="360" height="30"/>
+                                    <rect key="frame" x="0.0" y="526" width="400" height="30"/>
                                 </variation>
                             </textField>
                         </subviews>
@@ -101,21 +98,21 @@
                                 <exclude reference="Vs5-aA-Fph"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4e3-pW-et7"/>
-                                <exclude reference="Fhg-Ju-nmu"/>
-                                <exclude reference="U3i-1W-6f9"/>
-                                <exclude reference="B7G-33-dG1"/>
-                                <exclude reference="BWR-lS-tho"/>
-                                <exclude reference="sc4-lq-HI2"/>
+                                <exclude reference="A45-Jq-9Ii"/>
                                 <exclude reference="cIu-XY-Gcy"/>
                                 <exclude reference="eDZ-ds-rsh"/>
                                 <exclude reference="nkM-To-hAq"/>
+                                <exclude reference="4e3-pW-et7"/>
+                                <exclude reference="Fhg-Ju-nmu"/>
+                                <exclude reference="U3i-1W-6f9"/>
                                 <exclude reference="6Oa-ha-Nd9"/>
                                 <exclude reference="GJu-c9-y3p"/>
                                 <exclude reference="Jqg-qq-Uv0"/>
                                 <exclude reference="S3O-Bm-6YT"/>
                                 <exclude reference="d6B-WI-5d4"/>
-                                <exclude reference="A45-Jq-9Ii"/>
+                                <exclude reference="B7G-33-dG1"/>
+                                <exclude reference="BWR-lS-tho"/>
+                                <exclude reference="sc4-lq-HI2"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -126,27 +123,29 @@
                                 <include reference="Vs5-aA-Fph"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4e3-pW-et7"/>
-                                <include reference="Fhg-Ju-nmu"/>
-                                <include reference="U3i-1W-6f9"/>
-                                <include reference="B7G-33-dG1"/>
-                                <include reference="BWR-lS-tho"/>
-                                <include reference="sc4-lq-HI2"/>
+                                <include reference="A45-Jq-9Ii"/>
                                 <include reference="cIu-XY-Gcy"/>
                                 <include reference="eDZ-ds-rsh"/>
                                 <include reference="nkM-To-hAq"/>
+                                <include reference="4e3-pW-et7"/>
+                                <include reference="Fhg-Ju-nmu"/>
+                                <include reference="U3i-1W-6f9"/>
                                 <include reference="6Oa-ha-Nd9"/>
                                 <include reference="GJu-c9-y3p"/>
                                 <include reference="Jqg-qq-Uv0"/>
                                 <include reference="S3O-Bm-6YT"/>
                                 <include reference="d6B-WI-5d4"/>
-                                <include reference="A45-Jq-9Ii"/>
+                                <include reference="B7G-33-dG1"/>
+                                <include reference="BWR-lS-tho"/>
+                                <include reference="sc4-lq-HI2"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="Vs5-aA-Fph" id="RSl-nW-KFv"/>
                         <outlet property="cameraButton" destination="M16-sy-rpw" id="Y7n-mk-XYr"/>
                         <outlet property="imageView" destination="x8z-E3-kOL" id="SdO-aV-09b"/>
+                        <outlet property="topTextField" destination="fN5-Mc-5Nc" id="SmH-Nz-qz6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
