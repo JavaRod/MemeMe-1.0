@@ -15,6 +15,7 @@
 		3F016A581C606791003BAD50 /* MemeMe_1_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F016A571C606791003BAD50 /* MemeMe_1_0Tests.swift */; };
 		3F016A631C606791003BAD50 /* MemeMe_1_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F016A621C606791003BAD50 /* MemeMe_1_0UITests.swift */; };
 		3F39B7C01C66C1C400314052 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39B7BF1C66C1C400314052 /* TextFieldDelegate.swift */; };
+		3F39B7C21C66D59F00314052 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F39B7C11C66D59F00314052 /* Meme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3F016A621C606791003BAD50 /* MemeMe_1_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMe_1_0UITests.swift; sourceTree = "<group>"; };
 		3F016A641C606791003BAD50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F39B7BF1C66C1C400314052 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
+		3F39B7C11C66D59F00314052 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				3F016A491C606791003BAD50 /* Assets.xcassets */,
 				3F016A4B1C606791003BAD50 /* LaunchScreen.storyboard */,
 				3F016A4E1C606791003BAD50 /* Info.plist */,
+				3F39B7C11C66D59F00314052 /* Meme.swift */,
 			);
 			path = "MemeMe 1.0";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F016A451C606791003BAD50 /* ViewController.swift in Sources */,
+				3F39B7C21C66D59F00314052 /* Meme.swift in Sources */,
 				3F016A431C606791003BAD50 /* AppDelegate.swift in Sources */,
 				3F39B7C01C66C1C400314052 /* TextFieldDelegate.swift in Sources */,
 			);

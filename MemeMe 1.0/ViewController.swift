@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     let textFieldDelegate = TextFieldDelegate()
     
@@ -38,6 +39,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.delegate = textFieldDelegate
         bottomTextField.defaultTextAttributes = memeTextFieldAttributes
         bottomTextField.textAlignment = NSTextAlignment.Center
+        
+        //disable share button
+        shareButton.enabled = false;
     
     }
     
@@ -49,6 +53,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //get notified when keyboard is dsiplayed
         subscribeToKeyboardNotifications()
+        
+
         
     }
     
@@ -84,6 +90,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         self.dismissViewControllerAnimated(true, completion: nil)
+        shareButton.enabled = true;
         
     }
     
@@ -124,6 +131,40 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return keyboardSize.CGRectValue().height
     
     }
+    
+    func save() {
+        
+        let meme : Meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memedImage: generatedMemedImage())
+        
+    }
+    
+    func generatedMemedImage() -> UIImage {
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setToolbarHidden(true, animated: false)
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        self.navigationController?.setToolbarHidden(false, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        return memedImage
+    }
 
+    @IBAction func shareMeme(sender: AnyObject) {
+        
+        let memeImage : UIImage = generatedMemedImage()
+        let controller = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
+        controller.completionWithItemsHandler = {(activityType, completed:Bool, returnedItems:[AnyObject]?, error:NSError?) in
+            self.save()
+            controller.dismissViewControllerAnimated(true, completion: nil)        }
+        self.presentViewController(controller, animated: true, completion: nil)
+        
+    }
 }
+
+
 
