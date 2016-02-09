@@ -65,7 +65,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
 
-
+    //present view to pick from photo album
     @IBAction func pickAlbum(sender: AnyObject) {
         
         let pickerController = UIImagePickerController()
@@ -75,6 +75,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
 
     }
+    
     
     @IBAction func pickCamera(sender: AnyObject) {
         let pickerController = UIImagePickerController()
@@ -132,6 +133,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     }
     
+    //Create Meme object
     func save() {
         
         let meme : Meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memedImage: generatedMemedImage())
