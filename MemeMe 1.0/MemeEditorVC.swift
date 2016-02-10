@@ -73,22 +73,24 @@ class MemeEditorVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     }
 
 
-    //present view to pick from photo album
+    //Present view to pick from photo album
     @IBAction func pickAlbum(sender: AnyObject) {
         
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        presentViewController(pickerController, animated: true, completion: nil)
-        
+        presentViewForType(UIImagePickerControllerSourceType.PhotoLibrary)
 
     }
     
-    
+    //Present view to pick from a camera
     @IBAction func pickCamera(sender: AnyObject) {
+        
+        presentViewForType(UIImagePickerControllerSourceType.Camera)
+    }
+    
+    //Present view for specified type
+    func presentViewForType(type: UIImagePickerControllerSourceType) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
-        pickerController.sourceType = UIImagePickerControllerSourceType.Camera
+        pickerController.sourceType = type
         presentViewController(pickerController, animated: true, completion: nil)
     }
     
@@ -127,7 +129,7 @@ class MemeEditorVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     func keyboardWillShow(notification : NSNotification) {
         //Only move if bottom text field is selected 
         if (bottomTextField.isFirstResponder()) {
-          view.frame.origin.y -= getKeyboardHeight(notification)
+          view.frame.origin.y = getKeyboardHeight(notification) * -1
         }
     }
     
@@ -174,7 +176,9 @@ class MemeEditorVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         let memeImage : UIImage = generatedMemedImage()
         let controller = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
         controller.completionWithItemsHandler = {(activityType, completed:Bool, returnedItems:[AnyObject]?, error:NSError?) in
-            self.save()
+            if (completed) {
+             self.save()
+            }
             controller.dismissViewControllerAnimated(true, completion: nil)
         }
         presentViewController(controller, animated: true, completion: nil)
