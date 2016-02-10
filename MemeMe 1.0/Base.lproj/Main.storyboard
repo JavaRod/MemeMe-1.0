@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Meme EditorVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe_1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MemeEditorVC" customModule="MemeMe_1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -50,7 +50,8 @@
                                         <exclude reference="DVN-by-7sq"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="554" width="400" height="44"/>
                                     <mask key="constraints">
                                         <include reference="DVN-by-7sq"/>
                                     </mask>
@@ -171,7 +172,9 @@
                         <outlet property="bottomTextField" destination="Vs5-aA-Fph" id="RSl-nW-KFv"/>
                         <outlet property="cameraButton" destination="M16-sy-rpw" id="Y7n-mk-XYr"/>
                         <outlet property="imageView" destination="x8z-E3-kOL" id="SdO-aV-09b"/>
+                        <outlet property="navigationBar" destination="DWW-G8-RLD" id="VTJ-0X-me0"/>
                         <outlet property="shareButton" destination="f5R-T4-f0d" id="MTt-ee-aGh"/>
+                        <outlet property="toolbar" destination="yko-iH-WQu" id="tVy-8h-6w6"/>
                         <outlet property="topTextField" destination="fN5-Mc-5Nc" id="SmH-Nz-qz6"/>
                     </connections>
                 </viewController>
