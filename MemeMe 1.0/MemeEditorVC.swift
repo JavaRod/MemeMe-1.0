@@ -184,6 +184,11 @@ class MemeEditorVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         presentViewController(controller, animated: true, completion: nil)
         
     }
+    
+    
+    @IBAction func pressCancel(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
 
 
