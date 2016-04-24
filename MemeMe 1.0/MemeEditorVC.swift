@@ -22,6 +22,10 @@ class MemeEditorVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     let textFieldDelegate = TextFieldDelegate()
     
+    
+    var existingMeme : Meme!
+    
+    
 
     
     override func viewDidLoad() {
@@ -47,6 +51,17 @@ class MemeEditorVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         
         //get notified when keyboard is dsiplayed
         subscribeToKeyboardNotifications()
+        
+        if (existingMeme != nil) {
+            
+            topTextField.text = existingMeme.topText as String
+            bottomTextField.text = existingMeme.bottomText as String
+            imageView.image = existingMeme.image
+            
+            
+            shareButton.enabled = true;
+            
+        }
     
     }
     
@@ -150,6 +165,14 @@ class MemeEditorVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     func save() {
         
         let meme : Meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memedImage: generatedMemedImage())
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        if existingMeme != nil {
+            existingMeme = meme;
+        } else {
+            appDelegate.memes.append(meme)
+        }
+        
+         self.dismissViewControllerAnimated(true, completion: nil)
         
     }
     
