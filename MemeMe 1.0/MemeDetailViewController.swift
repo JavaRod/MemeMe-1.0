@@ -21,11 +21,20 @@ class MemeDetailViewController : UIViewController {
 
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let memeEditorNavController = segue.destinationViewController as! UINavigationController
+        let memeEditorViewController = memeEditorNavController.viewControllers[0] as! MemeEditorVC
+        memeEditorViewController.existingMeme = meme
+    }
+    
     func editMeme(sender: UIBarButtonItem) {
         
-        let controller = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorVC") as! MemeEditorVC
-        controller.existingMeme = meme
-        self.presentViewController(controller, animated: true, completion: nil)
+        //let controller = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorVC") as! MemeEditorVC
+        
+        performSegueWithIdentifier("editMeme", sender: self)
+        //controller.existingMeme = meme
+        //self.presentViewController(controller, animated: true, completion: nil)
     }
     
     

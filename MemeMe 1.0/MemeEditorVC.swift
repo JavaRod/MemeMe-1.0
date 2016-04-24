@@ -113,6 +113,9 @@ class MemeEditorVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
+            if (existingMeme != nil) {
+              existingMeme.image = image
+            }
         }
         
         dismissViewControllerAnimated(true, completion: nil)
@@ -166,29 +169,23 @@ class MemeEditorVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         
         let meme : Meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memedImage: generatedMemedImage())
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        if existingMeme != nil {
-            existingMeme = meme;
-        } else {
-            appDelegate.memes.append(meme)
-        }
-        
+        appDelegate.memes.append(meme)
          self.dismissViewControllerAnimated(true, completion: nil)
         
     }
     
     func generatedMemedImage() -> UIImage {
     
-        navigationBar.hidden = true
-        toolbar.hidden = true
-
+        navigationController?.navigationBar.hidden = true
+        navigationController?.toolbar.hidden = true
         
         UIGraphicsBeginImageContext(view.frame.size)
         view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        navigationBar.hidden = false
-        toolbar.hidden = false
+        navigationController?.navigationBar.hidden = false
+        navigationController?.toolbar.hidden = false
  
         
         return memedImage
